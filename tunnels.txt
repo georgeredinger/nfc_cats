@@ -1,0 +1,6 @@
+goes in /etc/rc.local
+must open 8082 (for web)  and 2224 (for ssh) on chicago.redinger.me
+
+
+autossh -i /root/.ssh/id_rsa -fnNTR 8082:localhost:80 george@chicago.redinger.me 
+autossh -i /root/.ssh/id_rsa -fnNTR 2224:localhost:22 george@chicago.redinger.me 
