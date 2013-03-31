@@ -17,6 +17,7 @@ do
       echo "timeout"
     fi
    echo "<div id=\"plot\"> <img src=\"cat.png\"></div> <pre>" > /var/www/index.lighttpd.html
+   awk -f /home/pi/workspace/nfc_cats/totals.awk < /home/pi/workspace/nfc_cats/cat.dat >> /var/www/index.lighttpd.html
    tac  /home/pi/workspace/nfc_cats/cat.txt >> /var/www/index.lighttpd.html 
    echo "</pre>" >> /var/www/index.lighttpd.html
    sleep 0.5s
