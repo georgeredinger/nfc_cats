@@ -12,11 +12,12 @@ do
         human=`date -d @"$ts"`
         result="$human $id"
         echo $result >> /home/pi/workspace/nfc_cats/cat.txt
+        /home/pi/workspace/nfc_cats/make_plot.sh
     else
       echo "timeout"
     fi
-   echo "<pre>" > /var/www/index.lighttpd.html
-   tail -n 50 /home/pi/workspace/nfc_cats/cat.txt >> /var/www/index.lighttpd.html 
+   echo "<div id=\"plot\"> <img src=\"cat.png\"></div> <pre>" > /var/www/index.lighttpd.html
+   tac  /home/pi/workspace/nfc_cats/cat.txt >> /var/www/index.lighttpd.html 
    echo "</pre>" >> /var/www/index.lighttpd.html
    sleep 0.5s
 done
