@@ -8,10 +8,10 @@ BEGIN {
 }
 
 
-/Oliver/ { 
-  print $1,1 >> "/home/pi/workspace/nfc_cats/oliver.dat"
+/Bug/ { 
+  print $1,1 >> "/home/pi/workspace/nfc_cats/bug.dat"
 }
 
-/Sadie/ { 
-  print $1,1 >> "/home/pi/workspace/nfc_cats/sadie.dat"
+/No Name/ { 
+  print $1,1 >> "/home/pi/workspace/nfc_cats/noname.dat"
 }

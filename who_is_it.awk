@@ -1,16 +1,20 @@
 
 BEGIN { 
-    tag["2646984483"]= "credit_card (Anita)";
-    tag["1266650301"]="A (Sadie)";
-    tag["3406986173"]="B (Chi)";
-    tag["184842941"]= "C (Oliver)";
-    tag["3946481597"]="D (No Name)";
+    tag["2646984483"]= " (Anita)";
+    tag["1266650301"]="A (Your Name Here)";
+    tag["3406986173"]="B Amelia"
+    tag["184842941"]= "C (Your Name Here)";
+    tag["3146871423"]= "Tucker"
+    tag["3946481597"]="D Lily Bug"
     FS=" "
 }
-
 
 { 
   hex=sprintf("0X%s%s%s%s\n", $3,$4,$5,$6);
   dec=strtonum(hex);
-  print tag[dec]
+  if(tag[dec] == "" ) {
+    print dec
+  } else {
+    print tag[dec]
+  }
 }
