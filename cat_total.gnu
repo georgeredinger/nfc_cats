@@ -1,11 +1,18 @@
 set terminal png size 1024, 250 
 set output '/home/pi/workspace/nfc_cats/cat_total.png'
-set xlabel "Day of Year"
-set style fill solid border -1
+set boxwidth 0.75 absolute
+set style fill solid 1.00 border -1
+set style data histogram
 set style histogram cluster gap 1
-set boxwidth 0.5
-set title "Laps v Julian Day"
-plot '/home/pi/workspace/nfc_cats/bug_total.dat' using ($1):($2) title "Bug", '/home/pi/workspace/nfc_cats/amelia_total.dat' using ($1):($2)  title "Amelia", '/home/pi/workspace/nfc_cats/tucker_total.dat' using ($1):($2)  title "Tucker"
+set xtics 1000 nomirror
+set ytics 100 nomirror
+set mxtics 2
+set mytics 2
+set ytics 10
+set ylabel "Laps pre Day"
+set xlabel "Day  number"
+
+plot '/home/pi/workspace/nfc_cats/cat_total.dat' using 2 t "Amelia", '' using 3 t "Bug", '' using 4:xtic(1) t "Tucker"
 
 
 
