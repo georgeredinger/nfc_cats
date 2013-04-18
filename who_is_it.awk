@@ -2,10 +2,10 @@
 BEGIN { 
     tag["2646984483"]= " (Anita)";
     tag["1266650301"]="A (Your Name Here)";
-    tag["3406986173"]="B Amelia"
+    tag["3406986173"]="Amelia"
     tag["184842941"]= "C (Your Name Here)";
     tag["3146871423"]= "Tucker"
-    tag["3946481597"]="D Lily Bug"
+    tag["3946481597"]="Lily Bug"
     FS=" "
 }
 

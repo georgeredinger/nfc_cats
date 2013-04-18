@@ -2,21 +2,41 @@ BEGIN {
   FS=" ";
 }
 
-/Oliver/ { 
+/Tucker/ { 
   day =  strftime("%D",$1)
-  oliver[day]++
+  tucker[day]++
 }
 
-/Sadie/ { 
+/Lily Bug/ { 
   day =  strftime("%D",$1)
-  sadie[day]++;
+  lily_bug[day]++;
 }
 
+/Amelia/ { 
+  day =  strftime("%D",$1)
+  amelia[day]++;
+}
 END {
-  for(key in sadie) {
-    printf("Sadie %s %d\n", key,sadie[key]);
+  sum = 0.0;
+  for(key in tucker) {
+    sum += tucker[key]; 
+    printf("Tucker %s %d\n", key,tucker[key]);
   }
-  for(key in oliver) {
-    printf("Oliver %s %d\n", key,oliver[key]);
+  printf("Tucker Totals %d\n", sum);
+  print " " ;
+  sum = 0.0;
+  for(key in lily_bug) {
+    sum += tucker[key]; 
+    printf("Lily Bug %s %d\n", key,lily_bug[key]);
   }
+  printf("Lily Bug Totals %d\n", sum);
+  print " " ;
+  sum = 0.0;
+  for(key in amelia) {
+    sum += amelia[key]; 
+    printf("Amelia %s %d\n", key,amelia[key]);
+  }
+  printf("Amelia Totals %d\n", sum);
+  print " ";
 }
+

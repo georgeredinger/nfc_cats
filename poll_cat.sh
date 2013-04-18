@@ -13,11 +13,13 @@ do
         result="$human $id"
         echo $result >> /home/pi/workspace/nfc_cats/cat.txt
         /home/pi/workspace/nfc_cats/make_plot.sh
+        /home/pi/workspace/nfc_cats/make_totals_plot.sh
     else
       echo "timeout"
     fi
-   echo "<div id=\"plot\"> <img src=\"cat.png\"></div> <pre>" > /var/www/index.lighttpd.html
-   awk -f /home/pi/workspace/nfc_cats/totals.awk < /home/pi/workspace/nfc_cats/cat.dat >> /var/www/index.lighttpd.html
+   echo "<div id=\"plot\"> <img src=\"cat.png\"></div> " > /var/www/index.lighttpd.html
+   echo "<div id=\"plot_total\"> <img src=\"cat_total.png\"></div> <pre>" >> /var/www/index.lighttpd.html
+#   awk -f /home/pi/workspace/nfc_cats/totals.awk < /home/pi/workspace/nfc_cats/cat.dat >> /var/www/index.lighttpd.html
    tac  /home/pi/workspace/nfc_cats/cat.txt >> /var/www/index.lighttpd.html 
    echo "</pre>" >> /var/www/index.lighttpd.html
    sleep 0.5s
