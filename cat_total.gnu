@@ -9,7 +9,7 @@ set ytics 100 nomirror
 set mxtics 2
 set mytics 2
 set ytics 10
-set ylabel "Laps pre Day"
+set ylabel "Laps per Day"
 set xlabel "Day  number"
 
 plot '/home/pi/workspace/nfc_cats/cat_total.dat' using 2 t "Amelia", '' using 3 t "Bug", '' using 4:xtic(1) t "Tucker"
