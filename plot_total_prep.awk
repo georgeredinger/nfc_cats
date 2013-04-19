@@ -5,17 +5,18 @@ BEGIN {
     tag["C"]= 3
     tag["D"]= 4
     FS=" "
+    user = ENVRON["USER"];
 }
 
 
 /Bug/ { 
-  print $1,1 >> "/home/pi/workspace/nfc_cats/bug.dat"
+  print $1,1 >> "/home/" user "/workspace/nfc_cats/bug.dat"
 }
 
 /Amelia/ { 
-  print $1,1 >> "/home/pi/workspace/nfc_cats/amelia.dat"
+  print $1,1 >> "/home/" user "/workspace/nfc_cats/amelia.dat"
 }
 
 /Tucker/ { 
-  print $1,1 >> "/home/pi/workspace/nfc_cats/tucker.dat"
+  print $1,1 >> "/home/" user "/workspace/nfc_cats/tucker.dat"
 }

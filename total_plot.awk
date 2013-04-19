@@ -1,9 +1,11 @@
 BEGIN { 
   FS=" ";
-    print "" > "/home/pi/workspace/nfc_cats/tucker_total.dat"
-    print "" > "/home/pi/workspace/nfc_cats/amelia_total.dat"
-    print "" > "/home/pi/workspace/nfc_cats/bug_total.dat"
+    user = ENVIRON["USER"]
+    print "" > "/home/" user "/workspace/nfc_cats/tucker_total.dat"
+    print "" > "/home/" user "/workspace/nfc_cats/amelia_total.dat"
+    print "" > "/home/" user "/workspace/nfc_cats/bug_total.dat"
 }
+
 function isLeapYear(xyear)
 {
 # for gregorian calendar
@@ -100,15 +102,15 @@ return doy
 END {
 
   for(key in tucker) {
-    print key,tucker[key] >> "/home/pi/workspace/nfc_cats/tucker_total.dat"
+    print key,tucker[key] >> "/home/" user "/workspace/nfc_cats/tucker_total.dat"
   }
 
   for(key in lily_bug) {
-    print key,lily_bug[key] >> "/home/pi/workspace/nfc_cats/bug_total.dat"
+    print key,lily_bug[key] >> "/home/" user "/workspace/nfc_cats/bug_total.dat"
   }
 
   for(key in amelia) {
-    print key,amelia[key] >> "/home/pi/workspace/nfc_cats/amelia_total.dat"
+    print key,amelia[key] >> "/home/" user "/workspace/nfc_cats/amelia_total.dat"
   }
 }
 
