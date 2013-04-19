@@ -6,5 +6,5 @@ while read line
   rest=`echo $line | cut -d ' ' -f 2,3,4,5`
   result="$human $rest"
   echo $result
-done < /home/pi/workspace/nfc_cats/cat.dat
+done < /home/$USER/workspace/nfc_cats/cat.dat
 
