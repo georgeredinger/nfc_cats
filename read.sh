@@ -1,6 +1,6 @@
 #!/bin/bash
 
-result=`nfc-poll 2>/dev/null| grep "UID (NFCID1):"` 
+result=`nfc-poll | grep "UID (NFCID1):"` 
 if [[ $? -eq 0 ]] 
 then
     ts=`date +%s`
@@ -10,5 +10,4 @@ then
 else
     echo "timeout"
 fi
-
 

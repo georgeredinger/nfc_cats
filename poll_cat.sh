@@ -1,9 +1,18 @@
 #!/bin/bash
+function captureStderr()
+{
+    local tmpFile=$(mktemp)
+    $2 2> $tmpFile
+    eval "$1=\"$(< $tmpFile)\""
+    rm $tmpFile
+}
+
 function watchForCat() {
   while true
   do
-      ./read.sh
-      sleep 0.5s
+     captureStderr err "./read.sh"
+     echo "the result was $err"
+     sleep 0.5s
   done
 }
 
