@@ -7,7 +7,5 @@ then
     id=`echo $result | awk -f ./who_is_it.awk`
     echo "$ts $id" >> ./cat.dat
     ./process.sh $ts $id
-else
-    echo "timeout"
 fi
 

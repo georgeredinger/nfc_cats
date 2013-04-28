@@ -11,7 +11,9 @@ function watchForCat() {
   while true
   do
      captureStderr err "./read.sh"
-     echo "the result was $err"
+     if [[ $err = *ERROR* ]]; then
+       echo "`date`: $err"
+     fi
      sleep 0.5s
   done
 }
